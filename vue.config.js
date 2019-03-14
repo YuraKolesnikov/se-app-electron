@@ -15,7 +15,7 @@ module.exports = {
   pluginOptions: {
     electronBuilder: {
       builderOptions: {
-        productName: 'Hve Notes',
+        productName: 'Vue Electron POC',
         win: {
           icon: './public/app-icons/logo.ico'
         },
@@ -29,7 +29,7 @@ module.exports = {
           allowToChangeInstallationDirectory: true,
           createDesktopShortcut: true,
           createStartMenuShortcut: true,
-          shortcutName: 'Hve Notes',
+          shortcutName: 'POC',
         },
       },
     },

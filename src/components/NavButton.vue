@@ -9,11 +9,10 @@
 import { Vue, Component, Prop } from 'vue-property-decorator'
 @Component
 export default class NavButton extends Vue {
-  @Prop({default: '/'})
-  to: string
-
-  @Prop({default: 'Home'})
-  title: string
+  @Prop()
+  to!: string
+  @Prop()
+  title!: string
 }
 
 </script>

@@ -6,20 +6,19 @@
     :title=button.title
     :to=button.path
     />
+    <!-- <NavButton :title=myTitle :to=to /> -->
     <router-view></router-view>
   </div>
 </template>
-<script>
-import Vue from 'vue'
-import NavButton from './components/NavButton'
-export default {
-  components: {
-    NavButton
-  },
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
+import NavButton from './components/NavButton.vue'
+@Component({components: {NavButton}})
+export default class App extends Vue {
   data() {
     return {
-      title: 'Home',
-      path: '/',
+      myTitle: 'Its working!',
+      to: '/test',
       buttons: [
         { title: 'Home', path: '/' },
         { title: 'Connect GUI', path: 'gui' },

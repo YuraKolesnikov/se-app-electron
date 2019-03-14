@@ -1,7 +1,7 @@
 {
   "name": "se-app-electron",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "background.js",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
