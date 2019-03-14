@@ -1,5 +1,6 @@
 'use strict'
 import { app, protocol, BrowserWindow, ipcMain, Menu } from 'electron'
+import App from './server/app'
 
 import {
   createProtocol,
@@ -32,6 +33,13 @@ function createWindow() {
   win.on('closed', () => {
     win = null
   })
+
+  const setting = {
+    mainWindow: win,
+    app,
+    baseDir: __dirname,
+  }
+  const appInstance = new App(setting)
 }
 
 app.on('window-all-closed', () => {
@@ -45,7 +53,13 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
+app.on('ready', async () => {
+  // if (isDevelopment && !process.env.IS_TEST) {
+  //   // Install Vue Devtools
+  //   await installVueDevtools()
+  // }
+  createWindow()
+})
 if (isDevelopment) {
   if (process.platform === 'win32') {
     process.on('message', (data) => {
