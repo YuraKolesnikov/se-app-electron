@@ -22,7 +22,7 @@ export default class Home extends Vue {
         { title: 'Home', path: '/', active: true },
         { title: 'Connect GUI', path: 'gui', active: true },
         { title: 'Connect WDA', path: 'wda', active: true },
-        { title: 'Connect FE', path: 'fe', active: true },
+        { title: 'Connect FE', path: 'fe', active: false },
         { title: 'Connect Ref App', path: 'ref', active: false}
       ]
     }

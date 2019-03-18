@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import App from './App.vue'
 import Home from './views/Home.vue'
 import Gui from './views/Gui.vue'
+import Wda from './views/Wda.vue'
 
 Vue.use(Router)
 export default new Router({
@@ -19,6 +20,11 @@ export default new Router({
       path: '/gui',
       name: 'gui',
       component: Gui
+    },
+    {
+      path: '/wda',
+      name: 'wda',
+      component: Wda
     },
     { path: '*', redirect: '/' }
   ],

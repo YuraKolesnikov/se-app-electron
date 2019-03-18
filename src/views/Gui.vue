@@ -1,9 +1,10 @@
 <template>
   <div class="gui">
     <NavButton
+      v-for="(button, index) in guiButtons"
+      :key=index
       :button=button
     />
-    <h1 class="header">GUI Connected</h1>
   </div>
 </template>
 <script lang="ts">
@@ -13,7 +14,13 @@ import { Vue, Component } from 'vue-property-decorator'
 export default class Gui extends Vue {
   data() {
     return {
-      button: { title: 'Home', path: '/', active: true }
+      guiButtons: [
+        { title: 'Log off', path: '/', active: true },
+        { title: 'First Page', path: '', active: true },
+        { title: 'Previous Page', path: '', active: true },
+        { title: 'Add to Favorites', path: '', active: true },
+        { title: 'Delete Favorites', path: '', active: false}
+      ]
     }
   }
 }
