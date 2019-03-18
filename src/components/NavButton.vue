@@ -1,6 +1,10 @@
 <template>
-  <router-link tag="a" :to="to">
-    <button class="nav-button">{{title}}</button>
+  <router-link tag="a" :to="button.path">
+    <button 
+      class="nav-button"
+      :disabled="button.active ? false : true">
+      {{button.title}}
+    </button>
   </router-link>
 </template>
 
@@ -10,9 +14,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 @Component
 export default class NavButton extends Vue {
   @Prop()
-  to!: string
-  @Prop()
-  title!: string
+  button!: object
 }
 
 </script>
@@ -43,6 +45,15 @@ export default class NavButton extends Vue {
   &:active, &:focus {
     background-color: #fff;
     color: rgb(10, 110, 200);
+  }
+
+  &:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    &:hover {
+      color: rgb(10, 110, 200);
+      background-color: #fff;
+    }
   }
 }
 </style>

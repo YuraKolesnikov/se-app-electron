@@ -1,12 +1,10 @@
 <template>
   <div id="app">
     <NavButton
-    v-for="(button, index) in buttons"
-    :key=index
-    :title=button.title
-    :to=button.path
+      v-for="(button, index) in buttons"
+      :key=index
+      :button=button
     />
-    <!-- <NavButton :title=myTitle :to=to /> -->
     <router-view></router-view>
   </div>
 </template>
@@ -20,11 +18,11 @@ export default class App extends Vue {
       myTitle: 'Its working!',
       to: '/test',
       buttons: [
-        { title: 'Home', path: '/' },
-        { title: 'Connect GUI', path: 'gui' },
-        { title: 'Connect WDA', path: 'wda' },
-        { title: 'Connect FE', path: 'fe' },
-        { title: 'Connect Ref App', path: 'ref'}
+        { title: 'Home', path: '/', active: true },
+        { title: 'Connect GUI', path: 'gui', active: true },
+        { title: 'Connect WDA', path: 'wda', active: true },
+        { title: 'Connect FE', path: 'fe', active: true },
+        { title: 'Connect Ref App', path: 'ref', active: false}
       ]
     }
   }
