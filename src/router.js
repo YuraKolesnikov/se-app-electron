@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App.vue'
 import Home from './views/Home.vue'
-import Products from './views/Products.vue'
+import Gui from './views/Gui.vue'
 
 Vue.use(Router)
 export default new Router({
@@ -16,9 +16,10 @@ export default new Router({
       component: Home
     },
     {
-      path: '/products',
-      name: 'products',
-      component: Products
+      path: '/gui',
+      name: 'gui',
+      component: Gui
     },
+    { path: '*', redirect: '/' }
   ],
 })
