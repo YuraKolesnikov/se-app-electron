@@ -16,7 +16,7 @@ import NavButton from '../components/NavButton.vue'
 export default class Wda extends Vue {
   data() {
     return {
-      homeButton: { title: 'Save and Back', path: '/', active: true}
+      homeButton: { title: 'Save and Back', path: '/', id:'home', active: true}
     }
   }
 }

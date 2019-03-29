@@ -15,7 +15,7 @@ export default class Gui extends Vue {
   data() {
     return {
       guiButtons: [
-        { title: 'Log off', path: '/', active: true },
+        { title: 'Log off', path: '/', id: 'home', active: true },
         { title: 'First Page', path: '', active: true },
         { title: 'Previous Page', path: '', active: true },
         { title: 'Add to Favorites', path: '', active: true },

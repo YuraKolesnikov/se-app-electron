@@ -9,8 +9,9 @@
   </div>
 </template>
 <script lang="ts">
+/* Comment out 13 - 16 lines for testing in web. */
 import {ipcRenderer} from 'electron'
-ipcRenderer.on('showGUI', (e, id) => {
+ipcRenderer.on('navigate', (e, id) => {
   document.querySelector(`#${id}`).parentNode.click()
 })
 import NavButton from '../components/NavButton.vue'
@@ -22,11 +23,11 @@ export default class Home extends Vue {
   data() {
     return {
       buttons: [
-        { title: 'Home',            id: 'home',    path: '/',    active: true },
+        { title: 'Home',            id: 'home', path: '/',    active: true },
         { title: 'Connect GUI',     id: 'gui',  path: 'gui',  active: true },
         { title: 'Connect WDA',     id: 'wda',  path: 'wda',  active: true },
         { title: 'Connect FE',      id: 'fe',   path: 'fe',   active: false },
-        { title: 'Connect Ref App', id: 'ref',  path: 'ref',  active: false}
+        { title: 'Connect Ref App', id: 'ref',  path: 'ref',  active: false }
       ]
     }
   }
