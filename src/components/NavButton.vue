@@ -1,7 +1,10 @@
 <template>
-  <router-link tag="a" :to="button.path">
+  <router-link 
+    tag="a" 
+    :to="button.path">
     <button 
       class="nav-button"
+      :id="button.id"
       :disabled="button.active ? false : true">
       {{button.title}}
     </button>
