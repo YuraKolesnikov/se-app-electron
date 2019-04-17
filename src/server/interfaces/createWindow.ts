@@ -111,8 +111,7 @@ function createWindow() {
     width: 1200,
     height: 800,
     show: false,
-    webPreferences: { webSecurity: false },
-    titleBarStyle: "hidden"
+    webPreferences: { webSecurity: false }
   });
   win.setTitle("Vue-Electron App");
 
