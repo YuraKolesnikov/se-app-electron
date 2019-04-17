@@ -11,8 +11,10 @@
 <script lang="ts">
 /* Comment out 13 - 16 lines for testing in web. */
 import {ipcRenderer} from 'electron'
-ipcRenderer.on('navigate', (e, id) => {
-  document.querySelector(`#${id}`).parentNode.click()
+ipcRenderer.on('navigate', (e: any, id: string) => {
+  let a = document.querySelector(`#${id}`) as HTMLButtonElement
+  let trigger = a.parentNode as HTMLAnchorElement
+  trigger.click()
 })
 import NavButton from '../components/NavButton.vue'
 import { Vue, Component } from 'vue-property-decorator'
